@@ -29,8 +29,6 @@ export function Home() {
     limit: `${PAGE_SIZE}`,
   });
 
-  console.log(pokemons);
-
   let content;
 
   if (isLoading) {
