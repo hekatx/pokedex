@@ -29,6 +29,8 @@ export function Home() {
     limit: `${PAGE_SIZE}`,
   });
 
+  console.log(pokemons);
+
   let content;
 
   if (isLoading) {
@@ -36,7 +38,7 @@ export function Home() {
   } else if (isSuccess) {
     content = (
       <Grid>
-        {pokemons.results.map((pokemon) => (
+        {pokemons?.results?.map((pokemon) => (
           <PokemonCard key={pokemon.name} pokemonResource={pokemon} />
         ))}
       </Grid>
