@@ -4,8 +4,8 @@ import { Home } from "../routes/Home";
 import { server } from "@/mocks/api/server";
 import { renderWithProviders } from "@/test-utils";
 
-describe("something truthy and falsy", () => {
-  it("title should be there lol", () => {
+describe("<Home />", () => {
+  it("should show fetched data", () => {
     server.use(
       rest.get(`*`, (req, res, ctx) => {
         const arg = req.url.searchParams.getAll("page");
@@ -16,6 +16,7 @@ describe("something truthy and falsy", () => {
     const res = renderWithProviders(<Home />);
 
     const title = res.findByText("Pokedex");
+
     expect(title).toBeInTheDocument();
   });
 });
